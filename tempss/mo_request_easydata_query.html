@@ -1,0 +1,189 @@
+<style>
+    * {
+        margin: 0;
+        padding: 0
+    }
+
+    #permission {
+        background: #fff;
+        padding: 0 0.8rem;
+        font-family: 'ColorFont-Normal';
+        color: #404040;
+        font-size: 15px;
+    }
+
+    #permission strong {
+        width: 100%
+    }
+
+    #permission table tr td:nth-child(1) {
+        text-align: center
+    }
+
+    #permission ul {
+        padding: 0;
+        width: 100%
+    }
+
+    #permission ul li {
+        list-style: none;
+        padding-left: 1.12rem;
+        box-sizing: border-box;
+        color: #737373;
+        border-bottom: 1px solid rgba(234, 234, 234, 1);
+    }
+
+    #permission ul li span {
+        color: #737373;
+    }
+</style>
+
+<!-- app端 -->
+<div id="permission">
+    <div
+        style="width: 100%;height: 30px;line-height: 30px;text-indent: 0.1rem;border: 1px solid #eee;border-top: none;border-left: none;border-right: none;">
+        <strong>权限申请</strong>
+    </div>
+
+    <div style="width: 100%;height: 185px;">
+        <ul>
+            <li
+                style="line-height: 45px;width: 100%;float: left;list-style-type:none;font-size: 14px; padding-left:0.8rem;">
+                申请人：
+                <span class="appname">{{ user.last_name }}{{ user.first_name }}</span>
+            </li>
+
+            <li style="line-height: 45px;width: 100%;float: left;list-style-type:none; font-size: 14px">
+                工号：
+                <span class="appgh">{{ user.username }}</span>
+            </li>
+
+            <li style="line-height: 45px;width: 100%;float: left; list-style-type:none; font-size: 14px;">
+                部门：
+                <span class="appbm">{{ user.employee.department.name }}</span>
+            </li>
+
+            <li style="line-height: 45px;width: 100%;float: left;list-style-type:none; font-size: 14px;">
+                邮箱：
+                <span class="appemail">{{ user.email }}</span>
+            </li>
+        </ul>
+    </div>
+
+
+    <div
+        style="width: 100%;height: 30px;line-height: 30px;border: 1px solid #eee;text-indent: 0.1rem;border-top: none;border-left: none;border-right: none;">
+        <strong>产品申请</strong>
+    </div>
+
+    <div style="width: 100%;">
+        <ul>
+            <li
+                style="line-height: 45px;width: 100%;float: left;list-style-type:none;font-size: 14px;padding-left:0.8rem;">
+                产品名称：
+                <span class="appname">{{ name }}</span>
+            </li>
+
+            <li style="line-height: 45px;width: 100%;float: left;list-style-type:none; font-size: 14px;">
+                申请帐号：
+                <span class="appgh">{{ info.account }}</span>
+            </li>
+
+            <li style="line-height: 45px;width: 100%;float: left;list-style-type:none; font-size: 14px;">
+                申请报表:<br>
+                <span class="appbm">{% for path in info.easydata_query_paths %}
+                    {{ path }}
+                    {% endfor %}</span>
+            </li>
+
+            <li style="line-height: 45px;width: 100%;float: left;list-style-type:none; font-size: 14px;">
+                数据权限:
+                <span class="appemail">查看</span>
+            </li>
+
+            <li style="line-height: 45px;width: 100%;float: left;list-style-type:none; font-size: 14px;">
+                申请理由:
+                <span class="appemail">{{ desc }}</span>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- PC端 -->
+<div id="permissions" style="background: #F6F9F8;">
+    <div
+        style="width: 100%;height: 30px;line-height: 30px;text-indent: 10px;border: 1px solid #eee;border-top: none;border-left: none;border-right: none;">
+        <strong>权限申请</strong>
+    </div>
+
+    <div style="width: 100%;height: 100px;">
+        <ul>
+            <li
+                style="line-height: 45px;width: 20%;float: left;margin-left: 14px; list-style-type:none;font-size: 14px;  color: #9c9999;">
+                申请人：
+                <span class="appname" style="color: #484343;">{{ user.last_name }}{{ user.first_name }}</span>
+            </li>
+
+            <li
+                style="line-height: 45px;width: 20%;float: left;margin-left: 14px; list-style-type:none; font-size: 14px; color: #9c9999;">
+                工号：
+                <span class="appgh" style="color: #484343;">{{ user.username }}</span>
+            </li>
+
+            <li
+                style="line-height: 45px;width: 20%;float: left;margin-left: 14px; list-style-type:none; font-size: 14px; color: #9c9999;">
+                部门：
+                <span class="appbm" style="color: #484343;">{{ user.employee.department.name }}</span>
+            </li>
+
+            <li
+                style="line-height: 45px;width: 20%;float: left;margin-left: 14px; list-style-type:none; font-size: 14px; color: #9c9999;">
+                邮箱：
+                <span class="appemail" style="color: #484343;">{{ user.email }}</span>
+            </li>
+        </ul>
+    </div>
+
+    <div
+        style="width: 100%;height: 30px;line-height: 30px;text-indent: 10px;border: 1px solid #eee;border-top: none;border-left: none;border-right: none;margin-bottom: 15px;">
+        <strong>产品申请</strong>
+    </div>
+
+    <div>
+        <table border="1" cellspacing="0" bordercolor="#eee" width="100%">
+            <thead>
+                <th style="width: 15%">产品名称</th>
+                <th style="width: 15%">申请帐号</th>
+                <th style="width: 35%">申请模块</th>
+                <th style="width: 5%">数据权限</th>
+                <th style="width: 30%">申请理由</th>
+            </thead>
+            <tr>
+                <td>{{ name }}</td>
+                <td>{{ info.account }}</td>
+                <td>
+                    <ul>
+                        {% for path in info.easydata_query_paths %}
+                        <li>{{ path }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+                <td>查看</td>
+                <td>{{ desc }}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<script>
+    document.documentElement.style.fontSize = document.documentElement.clientWidth / 1080 * 1 % + 'px';
+    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+        document.getElementById("permission").style.display = 'block'
+        document.getElementById("permissions").style.display = 'none'
+    } else {
+        document.getElementById("permission").style.display = 'none'
+        document.getElementById("permissions").style.display = 'block'
+    }
+</script>
