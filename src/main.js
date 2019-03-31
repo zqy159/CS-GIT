@@ -9,8 +9,10 @@ import 'mint-ui/lib/style.css'
 Vue.config.productionTip = false
 
 Vue.use(MintUI)
+console.log(MintUI)
 /* eslint-disable no-new */
 new Vue({
+  
   el: '#app',
   router,
   components: { App },

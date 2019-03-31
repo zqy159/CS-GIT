@@ -5,7 +5,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/activeWelfare',
       name: 'activeWelfare',
       component: ()=>import("@/page/ActiveWelfare")
     },
@@ -13,6 +13,11 @@ export default new Router({
       path: '/rulePage',
       name: '/rulePage',
       component: ()=>import("@/components/RulePage")
+    },
+    {
+      path: '/',
+      name: '/vipWelfare',
+      component: ()=>import("@/page/VipWelfare")
     },
     
   ]
