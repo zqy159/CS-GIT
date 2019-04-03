@@ -1,0 +1,26 @@
+{
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "explorer.confirmDragAndDrop": false,
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    // "prettier.singleQuote": true,
+    // "prettier.semi": false,
+    "vetur.format.defaultFormatter.js": "vscode-typescript",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "vetur.format.defaultFormatter.html": "js-beautify-html",
+    "vetur.format.defaultFormatterOptions": {
+        "wrap_attributes": "force-aligned",
+        "js-beautify-html": {
+            "wrap_attributes": "auto",
+            "end_with_newline": false
+        }
+    },
+    "explorer.confirmDelete": false,
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "workbench.sideBar.location": "left",
+    "update.channel": "none",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
+}

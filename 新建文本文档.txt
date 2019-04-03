@@ -1,0 +1,34 @@
+<template>
+    <el-tooltip effect="dark" placement="top">
+      <div slot="content">
+          {{messages}}
+
+      </div>
+      <i class="el-icon-question" style="color:#409eff;font-size:15px;"></i>
+    </el-tooltip>
+</template>
+<script>
+  export default {
+    name:'promptMessage',
+    props:['messages']
+  };
+</script>
+<style scope>
+
+</style>
+
+
+ return h('div', [
+                    h('span', {
+                        domProps:{
+                            innerHTML:column.label
+                        }
+                    }),
+                    h(iconMsg, {
+                        props: {messages: "±¸×¢ÐÅÏ¢2"},
+                        style: {
+                            'cursor': 'pointer',
+                            'margin-left':'10px'
+                        }
+                    })
+                ])
